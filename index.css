@@ -3,6 +3,7 @@ body {
 	font-family: sans-serif;
 	color: #333;
 	text-align: center;
+	background: black;
 }
 .question {
 	font-weight: 600;
@@ -40,6 +41,6 @@ label {
 	margin-top: 15px;
 }
 .pitanje:hover {
-	box-shadow: 12px 0px 12px rgba(18, 11, 215, 0.2);
+	box-shadow: 100px 0px 100px rgba(242, 242, 246, 0.2);
 }
 
