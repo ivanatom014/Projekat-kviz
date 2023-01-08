@@ -106,23 +106,27 @@ function generisiKviz(teksts, quizContainer, rezContainer, posaljiDugme){
 	let odgovori;
 
 	for(let i=0; i<teksts.length; i++){
+		
 		odgovori = [];
 		for(letter in teksts[i].odgovori){
-			odgovori.push(
+			if (odgovori.length === 0) {
+			  odgovori.push(
 				'<label>'
-					+ '<input type="radio" name="tekst'+i+'" value="'+letter+'">'
-					+ teksts[i].odgovori[letter]
-					
+				  + '<input type="radio" name="tekst'+i+'" value="'+letter+'" checked="checked">'
+				  + teksts[i].odgovori[letter]
 				+ '</label>'
-			);
-
-			odgovori[0] = '<label>'
-			+ '<input type="radio" name="tekst'+i+'" value="'+letter+'" checked="checked">'
-			+ teksts[i].odgovori[letter]
-		+ '</label>';
-
-
-		}
+			  )
+			} 
+			else {
+			  odgovori.push(
+				'<label>'
+				  + '<input type="radio" name="tekst'+i+'" value="'+letter+'">'
+				  + teksts[i].odgovori[letter]
+				+ '</label>'
+			  )
+			}
+		  }
+		
 
 		output.push(
 			'<div class="pitanje"><div class="tekst">' + teksts[i].tekst + '</div>'
