@@ -112,8 +112,16 @@ function generisiKviz(teksts, quizContainer, rezContainer, posaljiDugme){
 				'<label>'
 					+ '<input type="radio" name="tekst'+i+'" value="'+letter+'">'
 					+ teksts[i].odgovori[letter]
+					
 				+ '</label>'
 			);
+
+			odgovori[0] = '<label>'
+			+ '<input type="radio" name="tekst'+i+'" value="'+letter+'" checked="checked">'
+			+ teksts[i].odgovori[letter]
+		+ '</label>';
+
+
 		}
 
 		output.push(
@@ -130,27 +138,35 @@ function generisiKviz(teksts, quizContainer, rezContainer, posaljiDugme){
 	let answerContainers = quizContainer.querySelectorAll('.odgovori');
 	
 	let userAnswer = '';
-	let numCorrect = 0;
+	
 	let spantacnonetacno = document.getElementById('tacnost');
 	for(let i=0; i<teksts.length; i++){
 
 		userAnswer = (answerContainers[i].querySelector('input[name=tekst'+i+']:checked')||{}).value;
 		
 		if(userAnswer===teksts[i].indeks_korektnog_odgovora){
-			numCorrect++;
+			
 			spantacnonetacno.innerHTML += `<p style="color:green">Tacno ste odgovorili na ${i+1}.pitanje</p>`	
 		}
 		else{
 			spantacnonetacno.innerHTML += `<p style="color:red">Tacno ste odgovorili na ${i+1}.pitanje</p>`
 		}
 	}
-	rezContainer.innerHTML = numCorrect + ' pogođenih od ukupno ' + teksts.length;
+	
 }
 
 	prikazPitanja(teksts, quizContainer);
 
 	posaljiDugme.onclick = function(){
 		showResults(teksts, quizContainer, rezContainer);
+
+		let radioButtons = document.querySelectorAll('input[type="radio"]');
+		radioButtons.forEach(radioButton => {
+			radioButton.disabled = true;
+		  });
+		  posaljiDugme.disabled = true;
+	
+
 	}
 }
 
