@@ -19,7 +19,7 @@ let mojaPitanja = [
 		indeks_korektnog_odgovora: 'a'
 	},
 	{
-		tekst: "Jovan Jovanović Zmaj je nadimak Zmaj dobio po:?",
+		tekst: "Jovan Jovanović Zmaj je nadimak Zmaj dobio po?",
 		odgovori: {
 			a: 'Satiričnom listu "Zmaj"',
 			b: 'Zmaju od Noćaja',
@@ -56,7 +56,7 @@ let mojaPitanja = [
 		indeks_korektnog_odgovora: 'a'
 	},
 		{
-		tekst: "Koje delo počinje i završava se rečima :'Beskrajni, plavi krug. U njemu, zvezda'.?",
+		tekst: "Koje delo počinje i završava se rečima :'Beskrajni, plavi krug. U njemu, zvezda'?",
 		odgovori: {
 			a: 'Prokleta Avlija',
 			b: 'Nečista krv',
